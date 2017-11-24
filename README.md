@@ -4,6 +4,8 @@ Code to use a SNES controller on the Nintendo Switch
 
 Build using libopencm3 for the stm32f103 series.
 
+[![demo video](https://img.youtube.com/vi/fOCP0zd441E/0.jpg)](https://www.youtube.com/watch?v=fOCP0zd441E)
+
 ## Hardware
 
 I'm using a stm32f108c8t6 on a so called "blue pill" board, which basically is just the bare minimum
@@ -11,6 +13,16 @@ to get the chip running.
 I had to solder a 1.8kOhm resistor on the board between A12 and 3.3V to get USB working (see [stm32duino wiki](http://wiki.stm32duino.com/index.php?title=Blue_Pill#Hardware_installation)).
 
 The SNES controller is connected to GND, 3.3V, A0 (DATA_OUT), A1 (LATCH) and A2 (CLOCK).
+
+## Modes
+
+By default the button mapping is 1:1 from the SNES labels to Switch buttons, including the DPAD.
+For some games this setup is not working since the dpad can't be used for movement.
+
+When pressing A when plugging then controller in the DPAD becomes a fake analog stick.
+Pressing L results the L button to be mapped to ZL (e.g. ground pound in Mario Odyssey), same for R/ZR.
+
+When pressing Select and Start at the same time it simulates pressing the home button.
 
 ## Bootloader
 
